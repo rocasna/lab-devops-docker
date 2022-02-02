@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+
+    web-binnari:
+      container_name: ${CONTAINER_WEB}
+      image: ${IMAGE_WEB}
+      volumes:
+         - ${VOLUME_DATA_WEB}
+         - ${VOLUME_CONFIG_WEB}
+      #   - ${VOLUME_LOGS_WEB}
+      ports:
+        - "${PORT_WEB}:80"
+      depends_on:
+        - app-binnari
+
+    app-binnari:
+      container_name: ${CONTAINER_APP}
+      build: ${IMAGE_APP}
+      volumes:
+        - ${VOLUME_DATA_APP}
+      depends_on:
+        - db-binnari
+
+    db-binnari:
+      container_name: ${CONTAINER_DB}
+      image: ${IMAGE_DB}
+      volumes:
+        - ${VOLUME_DATA_DB}
+      environment:
+        - MYSQL_DATABASE=${MYSQL_DATABASE_DB}
+        - MYSQL_USER=${MYSQL_USER_DB}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD_DB}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      ports:
+        - ${PORT_DB}:3306
