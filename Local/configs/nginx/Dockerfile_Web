@@ -1,0 +1,18 @@
+FROM nginx:1.23.1
+
+RUN apt-get update  && \
+    apt-get install wget nano curl -y
+
+RUN mkdir -p /var/www/html
+
+WORKDIR /var/www/html
+
+#COPY www/ .
+
+# Establecer el propietario y grupo de los archivos y directorios
+COPY entrypoint_permissions.sh /entrypoint_permissions.sh
+RUN chmod +x /entrypoint_permissions.sh
+
+# Ejecutar el script de entrada al iniciar el contenedor
+ENTRYPOINT ["/entrypoint_permissions.sh"]
+CMD ["nginx", "-g", "daemon off;"]

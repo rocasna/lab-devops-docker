@@ -1,5 +1,10 @@
 # Ignora todo el contenido de los directorios, pero incluye los directorios mismos
-/configs/*
+!/configs/mysql/my.cnfBAK
+!/configs/mysql/logs/.gitkeep
+!/configs/nginx/defautl.confBAK
+!/configs/nginx/logs/.gitkeep
+!/configs/php/php.iniBAK
+!/configs/php/logs/.gitkeep
 !/configs/.gitkeep
 /dbdata/*
 !/dbdata/.gitkeep
