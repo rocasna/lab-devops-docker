@@ -1,5 +1,0 @@
-# Ignora todo el contenido de los directorios, pero incluye los directorios mismos
-!/logs/.gitkeep
-/php.ini
-!/php.iniBAK
-!/Dockerfile_App
