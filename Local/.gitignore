@@ -1,17 +1,26 @@
 # Ignora todo el contenido de los directorios, pero incluye los directorios mismos
-!/configs/mysql/my.cnfBAK
+!/configs/mysql/
+/configs/mysql/*
+!/configs/mysql/logs/
+/configs/mysql/logs/*
 !/configs/mysql/logs/.gitkeep
-/configs/mysql/my.cnf
 
+!/configs/nginx/
 /configs/nginx/*
-!/configs/nginx/default.conf
 !/configs/nginx/logs/
 /configs/nginx/logs/*
 !/configs/nginx/logs/.gitkeep
 
-!/configs/php/php.iniBAK
+!/configs/php/
+/configs/php/*
+!/configs/php/logs/
+/configs/php/logs/*
 !/configs/php/logs/.gitkeep
-!/configs/.gitkeep
+
+# Ignora los archivos específicos
+/configs/mysql/my.cnf
+/configs/nginx/default.conf
+/configs/php/php.ini
 
 /dbdata/*
 !/dbdata/.gitkeep
