@@ -2,9 +2,13 @@
 !/configs/mysql/my.cnfBAK
 !/configs/mysql/logs/.gitkeep
 /configs/mysql/my.cnf
-!/configs/nginx/defautl.confBAK
+
+/configs/nginx/*
+!/configs/nginx/default.conf
+!/configs/nginx/logs/
+/configs/nginx/logs/*
 !/configs/nginx/logs/.gitkeep
-/configs/nginx/default.conf
+
 !/configs/php/php.iniBAK
 !/configs/php/logs/.gitkeep
 /configs/php/php.ini
