@@ -1,3 +1,14 @@
-# Ignora todo el contenido excepto el archivo .gitingnore
-/.env
-/docker-compose.yml
+# Ignora todo el contenido de los directorios, pero incluye los directorios mismos
+/configs/*
+!/configs/.gitkeep
+/dbdata/*
+!/dbdata/.gitkeep
+/www/*
+!/www/.gitkeep
+
+# Ignora los archivos específicos
+docker-compose.yml
+.env
+!.gitignore
+!docker-compose.ymlBAK
+!.envBAK

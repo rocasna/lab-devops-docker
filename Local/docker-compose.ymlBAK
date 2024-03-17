@@ -2,29 +2,36 @@ version: "3"
 
 services:
 
-    web-binnari:
+    web-lab-app:
       container_name: ${CONTAINER_WEB}
-      image: ${IMAGE_WEB}
+      build:
+        context: .
+        dockerfile: ${BUILD_WEB}
       volumes:
-         - ${VOLUME_DATA_WEB}
-         - ${VOLUME_CONFIG_WEB}
-      #   - ${VOLUME_LOGS_WEB}
+        - ${VOLUME_DATA_APP}
+        - ${VOLUME_CONFIG_WEB}
+        - ${VOLUME_LOGS_WEB}
       ports:
         - "${PORT_WEB}:80"
       depends_on:
-        - app-binnari
+        - app-lab-app
 
-    app-binnari:
+    app-lab-app:
       container_name: ${CONTAINER_APP}
-      build: ${IMAGE_APP}
+      build:
+        context: .
+        dockerfile: ${BUILD_APP}
       volumes:
         - ${VOLUME_DATA_APP}
+        - ${VOLUME_LOGS_APP}
       depends_on:
-        - db-binnari
+        - db-lab-app
 
-    db-binnari:
+    db-lab-app:
       container_name: ${CONTAINER_DB}
-      image: ${IMAGE_DB}
+      build:
+        context: .
+        dockerfile: ${BUILD_DB}
       volumes:
         - ${VOLUME_DATA_DB}
       environment:
