@@ -11,10 +11,11 @@
 
 !/configs/php/php.iniBAK
 !/configs/php/logs/.gitkeep
-/configs/php/php.ini
 !/configs/.gitkeep
+
 /dbdata/*
 !/dbdata/.gitkeep
+
 /www/*
 !/www/.gitkeep
 
